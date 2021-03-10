@@ -1,0 +1,72 @@
+Apache Hive: It is a data warehouse infrastructure based on Hadoop framework which is perfectly suitable for data summarization, analysis and querying. It uses an SQL like language called HQL (Hive query Language)
+HQL: It is a query language used to write the custom map reduce framework in Hive to perform more sophisticated analysis of the data
+Table: Table in hive is a table which contains logically stored data
+
+Components of Hive:
+Meta store: Meta store is where the schemas of the Hive tables are stored, it stores the information about the tables and partitions that are in the warehouse.
+SerDe: Serializer, Deserializer which gives instructions to hive on how to process records
+Hive interfaces:
+Hive interfaces includes WEB UI
+Hive command line
+HD insight (windows server)
+Hive Function Meta commands:
+Show functions: Lists Hive functions and operators
+Describe function [function name]: Displays short description of the particular function
+Describe function extended [function name]: Displays extended description of the particular function
+Types of Hive Functions:
+UDF (User defined Functions): It is a function that fetches one or more columns from a row as arguments and returns a single value
+UDTF (User defined Tabular Functions): This function is used to produce multiple columns or rows of output by taking zero or more inputs
+Macros: It is a function that uses other Hive functions
+User defined aggregate functions: A user defined function that takes multiple rows or columns and returns the aggregation of the data
+User defined table generating functions: A function which takes a column from single record and splitting it into multiple rows
+Indexes: Indexes are created to the speedy access to columns in the database
+
+Syntax: Create index <INDEX_NAME> on table <TABLE_NAME>
+Thrift: A thrift service is used to provide remote access from other processors
+Meta store: This is a service which stores the metadata information such as table schemas
+Hcatalog: It is a metadata and table management system for Hadoop platform which enables storage of data in any format.
+
+Hive commands in HQL:
+Data Definition Language (DDL):
+It is used to build or modify tables and objects stored in a database
+Some of the DDL commands are as follows:
+
+To create database in Hive: create database<data base name>
+To list out the databases created in a Hive warehouse: show databases
+To use the database created: USE <data base name>
+To describe the associated database in metadata: describe<data base name>
+To alter the database created: alter<data base name>
+Data Manipulation Language (DML):
+These statements are used to retrieve, store, modify, delete, insert and update data in a database
+
+Inserting data in a database: The Load function is used to move the data into a particular Hive table.
+LOAD data <LOCAL> inpath <file path> into table [tablename]
+Drop table: The drop table statements deletes the data and metadata from the table:
+drop table<table name>
+Aggregation: It is used to count different categories from the table :
+Select count (DISTINCT category) from tablename;
+Grouping: Group command is used to group the result set, where the result of one table is stored in the other:
+Select <category>, sum( amount) from <txt records> group by <category>
+To exit from the Hive shell: Use the command quit
+Hive Architecture
+Hive Architecture
+
+Hive data types:
+Integral data types:
+Tinyint
+Smallint
+Int
+Bigint
+String types:
+VARCHAR-Length(1 to 65355)
+CHAR-Length(255)
+Timestamp: It supports the traditional Unix timestamp with optional nanosecond precision
+Dates
+Decimals
+Union type: It is a collection of heterogenous data types.
+Syntax: UNIONTYPE<int, double, array<string>, struct<a:int,b:string>>
+Complex types:
+Arrays: Syntax-ARRAY<data_type>
+Maps: Syntax- MAP<primitive_type, data_type>
+Structs: STRUCT<col_name : data_type [COMMENT col_comment], ...>
+
